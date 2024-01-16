@@ -1,0 +1,191 @@
+@import "../../global.scss";
+
+.container {
+  margin: 0 2rem 0 2rem;
+  border-radius: 0 0 1.4rem 1.4rem;
+  background: $very-dark-gray;
+
+  @media (width <= 768px) {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .errorMessage {
+    color: tomato;
+    margin-top: 1rem;
+  }
+
+  & + div {
+    margin-inline: 2.2rem;
+    margin-bottom: 2.2rem;
+    @media (width <= 768px) {
+      margin: 0;
+    }
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 11.6rem 11.3rem 10.5rem 11.2rem;
+    @media (width <= 768px) {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+      padding-right: 0;
+      grid-auto-rows: auto !important;
+    }
+    .explanation {
+      display: grid;
+      gap: 1rem;
+      background-color: rgba(108, 123, 159, 0.4);
+      border-radius: 5.9rem;
+      max-height: 85rem;
+      overflow: hidden;
+
+      @media (width <=1024px) {
+        display: none;
+      }
+
+      @media (width <= 768px) {
+        display: none;
+      }
+
+      .texts {
+        padding-inline: 5rem;
+        color: $white;
+        font-family: Ubuntu;
+        line-height: normal;
+        :nth-child(1) {
+          font-size: 4rem;
+          font-style: normal;
+          font-weight: 500;
+          padding-top: 6.7rem;
+        }
+        :nth-child(2) {
+          font-size: 2.8rem;
+          font-style: normal;
+          font-weight: 400;
+          margin-top: 2rem;
+          color: transparent; //sonradan duzeltilecek
+        }
+        :nth-child(3) {
+          text-align: justify;
+          font-size: 2.4rem;
+          font-style: normal;
+          font-weight: 400;
+          margin-top: 3rem;
+        }
+        :nth-child(4) {
+          color: $text-color;
+          text-align: justify;
+          font-size: 1.6rem;
+          font-style: normal;
+          margin-top: 6rem;
+          font-weight: 400;
+        }
+      }
+      .image {
+        svg {
+          width: 100%;
+        }
+      }
+    }
+    .getStarted {
+      padding-inline: 5.1rem;
+      padding-top: 5.8rem;
+      @media (width <= 768px) {
+        padding-inline: 1.1rem;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+
+        #getStarted {
+          color: #fff;
+          font-family: Ubuntu;
+          font-size: 3.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          margin-right: 7rem;
+          @media (width <= 416px) {
+            font-size: 2.6rem;
+            margin-right: 0;
+          }
+        }
+        span {
+          color: rgba(255, 255, 255, 0.5);
+          font-family: Ubuntu;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          margin-right: 0.5rem;
+          align-self: center;
+        }
+        button {
+          font-size: 1rem;
+        }
+        & + div {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          margin-top: 5.2rem;
+          margin-bottom: 4.5rem;
+        }
+      }
+      form {
+        label {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        input {
+          border-radius: 0.6rem;
+          border: 0.13rem solid rgba(255, 255, 255, 0.2);
+          padding: 1.2rem;
+          background-color: $very-dark-gray;
+          color: $white;
+        }
+        .inputGroup {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+
+          &.privacy {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-direction: row;
+            label {
+              font-size: 1.2rem !important;
+              color: rgba(255, 255, 255, 0.5);
+              font-weight: 400;
+              text-transform: none;
+              margin-left: 0.7rem;
+            }
+            a {
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              color: $white;
+            }
+          }
+        }
+        .col {
+          display: flex;
+          gap: 3.6rem;
+          margin-block: 2rem;
+
+          @media (width <= 450px) {
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+  }
+}

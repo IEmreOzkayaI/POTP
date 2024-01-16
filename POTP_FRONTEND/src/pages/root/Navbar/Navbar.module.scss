@@ -1,0 +1,330 @@
+@import "../../../global.scss";
+
+.navbar {
+  margin: 2.1rem 2rem 0 2rem;
+  padding-top: 5.9rem;
+  padding-left: 11.3rem;
+  background-color: $very-dark-gray;
+  border-radius: 1.4rem 1.4rem 0 0;
+  @media (width <= 1100px) {
+    padding-left: 5.3rem;
+  }
+  @media (width <= 768px) {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .hamburger,
+  .fullNav {
+    display: none;
+  }
+  @media (width <= 1024px) {
+    .hamburger {
+      display: block;
+      position: absolute;
+      right: 4rem;
+      top: 7rem;
+    }
+    .fullNav {
+      color: $very-dark-gray;
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      font-size: 5rem;
+      z-index: 1000;
+      .close {
+        position: absolute;
+        top: 2rem;
+        right: 5rem;
+        color: $very-dark-gray;
+        cursor: pointer;
+      }
+      a {
+        color: $very-dark-gray;
+      }
+    }
+  }
+
+  a {
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 16.3rem;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 100;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .firstChild {
+    display: flex;
+    align-items: center;
+    :nth-child(2) {
+      padding-left: 8.5rem;
+
+      @media (width <= 960px) {
+        padding-left: 5.5rem;
+      }
+    }
+    :nth-child(3) {
+      padding-left: 9.2rem;
+      padding-right: 9.2rem;
+      @media (width <= 960px) {
+        padding-left: 5.2rem;
+        padding-right: 5.2rem;
+      }
+    }
+
+    @media (width <= 1024px) {
+      :not(:first-child) {
+        display: none;
+      }
+    }
+  }
+  .lastChild {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (width <= 1024px) {
+      display: none;
+    }
+    .userName {
+      user-select: none;
+      color: #f5f3f3;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        height: 4rem;
+        background-color: transparent;
+        position: absolute;
+        transform: rotate(90deg);
+        width: 2.5rem;
+        left: 2.5rem;
+      }
+    }
+
+    .avatarDark {
+      border-radius: 50%;
+      background-color: rgba(245, 243, 243, 0.5);
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 11.2rem;
+      margin-left: 1rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 3.5rem;
+        background-color: transparent;
+        position: absolute;
+        transform: rotate(90deg);
+        width: 2.5rem;
+        top: 3rem;
+      }
+
+      img {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
+    .dropdownContentLoggedIn {
+      display: none;
+      position: absolute;
+      min-width: 16rem;
+      z-index: 1;
+      left: -7rem;
+      top: 7rem;
+      flex-direction: column;
+      gap: 3rem;
+      background-color: $white;
+      border-radius: 1rem;
+      padding: 2.3rem 4.3rem 2.2rem 3.4rem;
+      cursor: auto;
+      a {
+        color: $very-dark-gray;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+      }
+      & > :first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        color: $very-dark-gray;
+        text-wrap: nowrap;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+        user-select: none;
+        .imgContainer {
+          width: 3.5rem;
+          box-shadow: 0 0.3rem 1.5rem rgba(0, 0, 0, 0.2);
+          height: 3.5rem;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        img {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+      & > :nth-child(2) {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-left: 1rem;
+      }
+      & > :nth-child(3) {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        color: $very-dark-gray;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+        margin-left: 1rem;
+      }
+    }
+    &:hover {
+      .dropdownContentLoggedIn {
+        display: flex;
+        color: $very-dark-gray !important;
+      }
+    }
+
+    & > li:nth-child(2):hover {
+      .dropdownContentSignUp {
+        display: flex;
+      }
+    }
+
+    li {
+      position: relative;
+      text-transform: uppercase;
+      word-wrap: break-word;
+      cursor: pointer;
+
+      .login {
+        padding: 1.3rem 2.8rem;
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          height: 3.5rem;
+          background-color: transparent;
+          position: absolute;
+          top: 3rem;
+          transform: rotate(90deg);
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 2.5rem;
+        }
+      }
+      #signUp {
+        position: relative;
+        color: $white;
+        &::after {
+          content: "";
+          display: block;
+          height: 3.5rem;
+          background-color: transparent;
+          position: absolute;
+          top: 2rem;
+          transform: rotate(90deg);
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 2.5rem;
+        }
+      }
+      &:last-child {
+        margin-right: 13.3rem;
+        background-color: $very-dark-gray;
+        border: 1px solid $white;
+        border-radius: 1rem;
+        padding: 1.3rem 2.8rem;
+        text-transform: uppercase;
+        word-wrap: break-word;
+
+        @media (width <= 1100px) {
+          margin-right: 5.3rem;
+        }
+      }
+      .dropdownContentLogin,
+      .dropdownContentSignUp {
+        display: none;
+        position: absolute;
+        min-width: 16rem;
+        z-index: 1;
+        left: 3rem;
+        top: 5.7rem;
+        flex-direction: column;
+        gap: 3rem;
+        background-color: $white;
+        border-radius: 1rem;
+        padding: 4.1rem 3.3rem 4.2rem 3.3rem;
+        cursor: auto;
+        a {
+          display: flex;
+          align-items: end;
+          gap: 1.2rem;
+          color: $very-dark-gray;
+          font-size: 1.2rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-decoration-line: underline;
+          text-transform: uppercase;
+        }
+        img {
+          height: 1.6rem;
+          width: 1.6rem;
+        }
+      }
+      .dropdownContentSignUp {
+        left: -6.4rem;
+      }
+
+      &:hover {
+        .dropdownContentLogin {
+          display: flex;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../../global.scss";
+
+.button {
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(22, 22, 27, 0.5);
+  display: flex;
+  height: 3.9rem;
+  padding: 1.1rem 1.4rem 1rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  text-align: center;
+  font-family: Ubuntu;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  &.white {
+    background-color: #fff;
+    color: rgba(22, 22, 27, 0.5);
+  }
+  &.dark {
+    color: #fff;
+    background-color: $very-dark-gray;
+    border: 0.1rem solid #fff;
+  }
+  &.blue {
+    background-color: $blue-gray;
+    color: #fff;
+  }
+  &.md {
+    width: 18.3rem;
+  }
+}

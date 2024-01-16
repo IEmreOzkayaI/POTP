@@ -1,0 +1,181 @@
+@import "../../global.scss";
+
+.container {
+  margin: 0 2rem 0 2rem;
+  border-radius: 0 0 1.4rem 1.4rem;
+  background: $very-dark-gray;
+  @media (width <=768px) {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .errorMessage {
+    color: tomato;
+    margin-top: 1rem;
+  }
+
+  & + div {
+    margin-inline: 2.2rem;
+    margin-bottom: 2.2rem;
+
+    @media (width <=768px) {
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 11rem 11.2rem 9.2rem 11.2rem;
+    @media (425px<=width <=1024px) {
+      padding: 11rem 5.6rem;
+    }
+    @media (width <=424px) {
+      padding: 11rem 1rem;
+    }
+
+    .explanation {
+      display: grid;
+      gap: 1rem;
+      background-color: rgba(108, 123, 159, 0.4);
+      border-radius: 5.9rem;
+      max-height: 85rem;
+      overflow: hidden;
+
+      @media (width <=1024px) {
+        display: none;
+      }
+
+      .texts {
+        padding-inline: 5rem;
+        color: $white;
+        font-family: Ubuntu;
+        line-height: normal;
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        z-index: 10;
+        :nth-child(1) {
+          font-size: 4rem;
+          font-style: normal;
+          font-weight: 500;
+          padding-top: 6.7rem;
+        }
+        :nth-child(2) {
+          font-size: 2.8rem;
+          font-style: normal;
+          font-weight: 400;
+          margin-top: 8rem;
+        }
+        :nth-child(3) {
+          text-align: justify;
+          font-size: 2.4rem;
+          font-style: normal;
+          font-weight: 400;
+          margin-top: 3rem;
+        }
+        :nth-child(4) {
+          color: $text-color;
+          text-align: justify;
+          font-size: 1.6rem;
+          font-style: normal;
+          margin-top: 6rem;
+          font-weight: 400;
+        }
+      }
+      .image {
+        svg {
+          width: 100%;
+        }
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+      }
+    }
+    .getStarted {
+      padding-inline: 5.1rem;
+      padding-top: 5.8rem;
+
+      @media (width <=1024px) {
+        grid-column: span 2;
+      }
+      @media (width <=424px) {
+        padding: 0;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+
+        #getStarted {
+          color: #fff;
+          font-family: Ubuntu;
+          font-size: 3.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          margin-right: 7rem;
+        }
+        span {
+          color: rgba(255, 255, 255, 0.5);
+          font-family: Ubuntu;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          margin-right: 0.5rem;
+          align-self: center;
+        }
+        .hideOnMobile {
+          @media (width <=424px) {
+            display: none;
+          }
+        }
+
+        button {
+          font-size: 1rem;
+          @media (width <=424px) {
+            display: none;
+          }
+        }
+        & + div {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          margin-top: 5.2rem;
+          margin-bottom: 4.5rem;
+          @media (width <=424px) {
+            display: none;
+          }
+        }
+      }
+      form {
+        label {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        input {
+          border-radius: 0.6rem;
+          border: 0.13rem solid rgba(255, 255, 255, 0.2);
+          padding: 1.2rem;
+          background-color: $very-dark-gray;
+          color: $white;
+        }
+        .inputGroup {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        .col {
+          display: flex;
+          gap: 3.6rem;
+          margin-block: 2rem;
+        }
+      }
+    }
+  }
+}

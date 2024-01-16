@@ -1,0 +1,86 @@
+$white: #f5f3f3;
+$purple-gray: #918a9f;
+$dark-gray: #383e50;
+$light-gray: #657284;
+$blue-gray: #6c7b9f;
+$very-dark-gray: #16161b;
+$text-color: #a1aeb7;
+$black: #000000;
+$real-white: #ffffff;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background-color: $white;
+}
+
+:root {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 10px; // so you can 1rem as 16px
+}
+
+ul {
+  list-style: none;
+}
+
+.globalContainer {
+  margin: 2.1rem 2rem;
+  margin-top: 0;
+  @media (width <= 768px) {
+    margin: 0;
+  }
+}
+
+.flex {
+  display: flex;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+
+@for $i from 0 through 10 {
+  .m-#{$i} {
+    margin: #{$i}rem;
+  }
+  .p-#{$i} {
+    padding: #{$i}rem;
+  }
+}
+
+@for $i from 0 through 10 {
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}rem;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}rem;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}rem;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}rem;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}rem;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}rem;
+  }
+}
